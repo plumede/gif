@@ -14,9 +14,36 @@ code {
     monospace;
 }
 
+.header {
+  color: #cdd9e5;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.link {
+  transition: color 0.3s;
+  font-weight: 500;
+}
+.link:hover {
+  color: #fcd34d;
+}
+input {
+  background-color: #111827;
+  color: #fff;
+}
 @media (prefers-color-scheme: light) {
+  .header {
+    color: #22272e;
+  }
+  .link:hover {
+    color: royalblue;
+  }
+  input {
+    background-color: #e5e5e5;
+    color: #111827;
+  }
   body {
-    background-color: white;
+    background-color: #f7f7f8;
     color: #000;
   }
 }
