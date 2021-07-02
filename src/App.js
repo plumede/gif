@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SearchGif from "./components/SearchGif";
+import GifGrid from "./components/GifGrid";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [category, setCategory] = useState(["programming"]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <>
+      <header className="header">
+        App De Gifs By{" "}
+        <a className="link" target="_blank" href="https://t.me/arcodez">
+          Arcodez
+        </a>{" "}
+        and{" "}
+        <a className="link" target="_blank" href="https://t.me/plumede">
+          Plumede
         </a>
       </header>
-    </div>
+      <SearchGif setCategory={setCategory} category={category} />
+      <main>
+        {category.map((el) => {
+          return <GifGrid el={el} />;
+        })}
+      </main>
+    </>
   );
-}
+};
 
 export default App;
